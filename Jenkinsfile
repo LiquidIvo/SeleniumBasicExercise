@@ -5,19 +5,19 @@ agent any
 stages {
     stage('Restore NuGet Packages') {
         steps {
-            bat 'dotnet restore src/SeleniumBasicExercise.sln'
+            bat 'dotnet restore SeleniumBasicExercise.sln'
         }
     }
 
     stage('Build') {
         steps {
-            bat 'dotnet build src/SeleniumBasicExercise.sln --no-restore'
+            bat 'dotnet build SeleniumBasicExercise.sln --no-restore'
         }
     }
 
     stage('Run Tests') {
         steps {
-            bat 'dotnet test src/SeleniumBasicExercise.sln --no-build'
+            bat 'dotnet test SeleniumBasicExercise.sln --no-build'
         }
     }
 }
